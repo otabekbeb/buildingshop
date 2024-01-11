@@ -19,8 +19,8 @@ import { BACKEND_URL_API_PRICELIST } from '@/app/stores/helper';
             <RouterLink :to="ROUTES.main" class="logo"></RouterLink>
             <div class="mob_header_mes">
                 <div class="header_icon">
-                    <HeaderCompareLink count />
-                    <HeaderFavoriteLink count />
+                    <HeaderCompareLink />
+                    <HeaderFavoriteLink />
                 </div>
                 <MobileOpenMenu />
             </div>
@@ -86,8 +86,8 @@ import { BACKEND_URL_API_PRICELIST } from '@/app/stores/helper';
                                 </RouterLink>
                             </div>
                             <div class="header_icon">
-                                <HeaderCompareLink />
-                                <HeaderFavoriteLink />
+                                <HeaderCompareLink/>
+                                <HeaderFavoriteLink/>
                             </div>
                         </div>
                     </div>
