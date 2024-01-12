@@ -407,7 +407,7 @@
     .mainbanner_form {
         width: 20.9375vw;
         min-height: 21.145vw;
-        padding: 1.25vw 2.4479vw;
+        padding: 2.25vw 2.4479vw;
 
         @media (max-width: 900px) {
             width: 100%;
@@ -868,7 +868,7 @@
     }
 
     .footer_contacts span {
-        font-size: 0.833vw;
+        font-size: 10px;
         margin-bottom: 0.520vw;
     }
 
@@ -2406,7 +2406,7 @@
 
         .footer_contacts span {
             text-align: center;
-            font-size: 16px;
+            font-size: 10px;
             margin-bottom: 6px;
         }
 

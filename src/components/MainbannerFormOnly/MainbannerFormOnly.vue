@@ -51,8 +51,6 @@ const onSubmit = async (values) => {
         <ErrorMessage name="name" />
         <Field type="tel" autocomplete="off" name="phone" required placeholder="Номер телефона" />
         <ErrorMessage name="phone" />
-        <Field type="email" autocomplete="off" name="email" required placeholder="Электронная почта" />
-        <ErrorMessage name="email" />
         <button class="form_button" type="submit">отправить
             заявку</button>
         <div class="agreement">
