@@ -15,7 +15,6 @@ import { ROUTES } from '@/app/router/helper';
             <div class="mob_header_mes">
                 <div class="header_icon">
                     <HeaderCompareLink active count />
-                    <HeaderFavoriteLink active count />
                 </div>
                 <MobileOpenMenu />
             </div>
@@ -87,7 +86,6 @@ import { ROUTES } from '@/app/router/helper';
                     </div>
                     <div class="header_icon">
                         <HeaderCompareLink active count />
-                        <HeaderFavoriteLink active count />
                     </div>
                 </div>
             </div>

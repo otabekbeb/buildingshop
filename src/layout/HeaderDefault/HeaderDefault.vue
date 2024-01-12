@@ -16,7 +16,6 @@ import { BACKEND_URL_API_PRICELIST } from '@/app/stores/helper';
             <div class="mob_header_mes">
                 <div class="header_icon">
                     <HeaderCompareLink active count />
-                    <HeaderFavoriteLink active count />
                 </div>
                 <MobileOpenMenu></MobileOpenMenu>
             </div>
@@ -82,7 +81,6 @@ import { BACKEND_URL_API_PRICELIST } from '@/app/stores/helper';
                     </div>
                     <div class="header_icon">
                         <HeaderCompareLink active count />
-                        <HeaderFavoriteLink active count />
                     </div>
                 </div>
             </div>
