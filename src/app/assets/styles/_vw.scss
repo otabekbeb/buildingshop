@@ -58,7 +58,7 @@
 
     .wrap_menu {
         padding: 2.5vw 2.8125vw;
-        left: 28vw;
+        left: 27vw;
         height: 49.756vw;
         width: 35.571vw;
     }
@@ -302,7 +302,8 @@
     }
 
     .header_icon a {
-        width: 1.302vw;
+        // width: 1.302vw;
+        width: 4vw;
         height: 1.302vw;
         margin-right: 0.520vw;
     }
@@ -407,7 +408,7 @@
     .mainbanner_form {
         width: 20.9375vw;
         min-height: 21.145vw;
-        padding: 1.25vw 2.4479vw;
+        padding: 2.25vw 2.4479vw;
 
         @media (max-width: 900px) {
             width: 100%;
@@ -868,7 +869,7 @@
     }
 
     .footer_contacts span {
-        font-size: 0.833vw;
+        font-size: 10px;
         margin-bottom: 0.520vw;
     }
 
@@ -2406,7 +2407,7 @@
 
         .footer_contacts span {
             text-align: center;
-            font-size: 16px;
+            font-size: 10px;
             margin-bottom: 6px;
         }
 

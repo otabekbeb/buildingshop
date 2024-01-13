@@ -1028,7 +1028,7 @@
     position: relative;
     width: 402px;
     min-height: 406px;
-    background: rgba(255, 255, 255, 0.46);
+    background: #FF781F;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1066,7 +1066,7 @@
 
 .mainbanner_form form .form_button {
     border-radius: 8px;
-    background: #FF781F;
+    background: #333333;
     box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.22);
     border: none;
     width: 100%;
@@ -1085,9 +1085,9 @@
     transition: .3s linear;
 }
 
-.mainbanner_form form .form_button:hover {
-    background: #d65f10;
-}
+// .mainbanner_form form .form_button:hover {
+//     background: #d65f10;
+// }
 
 .mainbanner_form form .agreement {
     color: #FFF;
@@ -2156,9 +2156,9 @@
 
 .footer_contacts span {
     display: block;
-    color: #9D9D9D;
+    color: white;
     font-family: Inter;
-    font-size: 16px;
+    font-size: 10px;
     font-style: normal;
     font-weight: 700;
     line-height: 1.2;
@@ -2461,7 +2461,23 @@
 
 
 
-
+.compare_close{
+    position: absolute;
+    top: 10px;
+    right: 60px;
+    z-index: 100;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    border-radius: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #A8A8A8;
+}
+.compare_close:hover{
+    background: #FF781F;
+}
 
 .text_page.compare::after {
     content: "";
@@ -2469,7 +2485,7 @@
     bottom: 0;
     width: 100%;
     height: 51.3%;
-    background: #FFF;
+    // background: #FFF;
     z-index: -1;
 }
 

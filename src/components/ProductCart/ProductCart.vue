@@ -3,9 +3,9 @@ import { defineProps, ref, watch } from 'vue';
 import { RouterLink } from 'vue-router';
 import { ROUTES } from '@/app/router/helper';
 import { useFavoritesStore } from '@/app/stores/modules/favorite';
-
+import { useComparisonsStore } from '@/app/stores/modules/comparison';
+const { comparisonAdd } = useComparisonsStore();
 const { favoriteAdd } = useFavoritesStore();
-
 const props = defineProps({
     product: {
         type: Object,
@@ -20,7 +20,6 @@ const countCartIncrement = () => countCart.value++;
 const countCartDecrement = () => countCart.value--;
 
 const cartAdd = () => {
-    favoriteAdd({ ...product, countCart });
 }
 
 watch(countCart, () => {
@@ -53,7 +52,7 @@ watch(countCart, () => {
             <div class="price_desc">Цена за штуку</div>
         </div>
         <div class="btns">
-            <button class="btn" @click="cartAdd">заказать</button>
+            <button class="btn" @click="comparisonAdd(product)">заказать</button>
             <div class="count">
                 <input type="button" value="-" @click="countCartDecrement">
                 <input type="number" step="1" min="1" max="10" id="num_count" name="quantity" v-model="countCart"
