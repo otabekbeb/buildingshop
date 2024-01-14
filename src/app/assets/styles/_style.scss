@@ -1501,6 +1501,75 @@
     padding: 55px 0;
 }
 
+*{
+    box-sizing: border-box;
+}
+
+@media(max-width:00px){
+    .product_cart{
+        width: 20vw !important;
+    }
+    .product_cart .btn, .product_content_inf .btn{
+        height: 2.5vw !important;
+        width: 9vw !important;
+        font-size: 0.7vw !important;
+    }
+    .product_cart .name{
+        font-size: 0.8vw !important;
+    }
+    .product_cart .prices .price_desc, .product_content_inf .prices .price_desc{
+        font-size: 0.8vw !important;
+    }
+    .product_cart .count input[type=number], .product_content_inf .count input[type=number]{
+        width: 3.5vw !important;
+    }
+    .product_cart .count, .product_content_inf .count{
+        height: 2.5vw !important;
+        width: 8vw !important;
+        align-items: center;
+        justify-content: center;
+    }
+    .product_cart .count input[type=button], .product_content_inf .count input[type=button]{
+        width: 2vw !important;
+        height: 2vw !important;
+    }
+}
+
+@media(max-width:0px){
+    .product_cart{
+        width: 27vw !important;
+        height: 30vw !important;
+    }
+    .product_cart .btn, .product_content_inf .btn{
+        height: 3.5vw !important;
+        width: 14vw !important;
+        font-size: 1vw !important;
+    }
+    .product_cart .name{
+        font-size: 1.3vw !important;
+        height: 4vw;
+    }
+    .product_cart .prices .price_desc, .product_content_inf .prices .price_desc{
+        font-size: 1.3vw !important;
+        width: 6vw !important;
+    }
+    .product_cart .count input[type=number], .product_content_inf .count input[type=number]{
+        width: 3.5vw !important;
+        font-size: 1.3vw !important;
+    }
+    .product_cart .count, .product_content_inf .count{
+        height: 3.5vw !important;
+        width: 10vw !important;
+        align-items: center;
+        justify-content: center;
+    }
+    .product_cart .count input[type=button], .product_content_inf .count input[type=button]{
+        width: 3vw !important;
+        height: 3vw !important;
+        font-size: 1.7vw !important;
+    }
+}
+
 .product_cart {
     position: relative;
     width: 286px;
@@ -1514,6 +1583,7 @@
     -o-transition: .3s linear;
     -moz-transition: .3s linear;
     transition: .3s linear;
+    margin-right: 0px !important;
 }
 
 .product_cart:last-child {
@@ -1657,7 +1727,7 @@
     font-weight: 600;
     line-height: 1.2;
     height: 55px;
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 .product_cart .name:hover {
@@ -1817,7 +1887,7 @@
     text-align: center;
     border: none;
     padding: 0 8px;
-    width: 44px;
+    width: 3.3vw;
 }
 
 .banner_to_catalog {

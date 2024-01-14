@@ -1,3 +1,6 @@
+.wrapper{
+    overflow: hidden;
+}
 @media (max-width: 1919px) {
 
     .main_banner {
@@ -609,7 +612,7 @@
     }
 
     .product_cart {
-        width: 14.895vw;
+        width: 15.9vw;
         height: 22.760vw;
         margin-right: 2.5vw;
         padding: 1.25vw 1.093vw;
@@ -1453,7 +1456,40 @@
         }
     }
 
+    @media(max-width:450px){
+        .product_cart{
+            width: 100% !important;
+            height: 50vw !important;
+        }
+        .product_cart .btns{
+            width: 50vw !important;
+            height: 10vw !important;
+        }
+        .product_cart .btns .btn{
+            font-size: 2.4vw !important;
+        }
+        .product_cart .prices, .product_content_inf .prices{
+            width: 50vw !important;
+        }
+        .product_cart .name{
+            width: 50vw !important;
+            font-size: 2.8vw !important;
+        }
+        .product_cart .prices .price, .product_content_inf .prices .price{
+            font-size: 4.5vw !important;
+        }
+        .product_cart .photo img{
+            font-size: 2.8vw !important;
+        }
+        .product_cart .prices, .product_content_inf .prices{
+            bottom: 16vw !important;
+        }
+    }
+
     @media (max-width: 767px) {
+        .product_cart .photo img{
+            font-size: 2vw;
+        }
         .main_banner {
             height: 198px;
         }
@@ -2162,9 +2198,9 @@
         }
 
         .product_cart {
-            width: 100%;
-            height: 208px;
-            margin-bottom: 25px;
+            width: 49%;
+            height: 32vw;
+            margin-bottom: 15px;
             margin-right: 0;
             padding: 16px;
             padding-top: 30px;
@@ -2201,7 +2237,7 @@
 
         .product_cart .photo {
             margin-bottom: 0;
-            width: 133px;
+            width: 16vw;
             height: 100.448px;
             position: absolute;
             top: 11px;
@@ -2212,13 +2248,13 @@
 
         .product_cart .name {
             margin-bottom: 0;
-            font-size: 14px;
+            font-size: 1.8vw;
             height: 70px;
             padding-right: 0;
             position: absolute;
             right: 10px;
             top: 24px;
-            width: 167px;
+            width: 22vw;
             order: 2;
         }
 
@@ -2248,15 +2284,15 @@
         .product_cart .prices,
         .product_content_inf .prices {
             position: absolute;
-            left: 167px;
+            right: 15px;
             bottom: 53px;
             margin: 0;
-            width: 167px;
+            width: 22vw;
         }
 
         .product_cart .prices .price,
         .product_content_inf .prices .price {
-            font-size: 24px;
+            font-size: 3.5vw !important;
         }
 
         .product_cart .prices .price_desc,
@@ -2278,18 +2314,18 @@
             border-radius: 5px;
             background: #C2C2C2;
             justify-content: center;
-            width: 167px;
-            height: 34px;
+            width: 22vw;
+            height: 6vw;
             position: absolute;
             right: 14px;
             bottom: 10px;
         }
 
         .product_cart .btns .btn {
-            font-size: 10px;
+            font-size: 1.6vw;
             padding: 0;
-            height: auto;
-            width: auto;
+            height: 100%;
+            width: 100%;
         }
 
         .product_cart .btns .count {

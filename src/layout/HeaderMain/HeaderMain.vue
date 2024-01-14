@@ -109,7 +109,7 @@ import { BACKEND_URL_API_PRICELIST } from '@/app/stores/helper';
                         <MainbannerForm />
                         <div class="mainbanner_bg_photo"></div>
                     </div>
-                    <div class="mainbanner_products row">
+                    <div style="flex-wrap:nowrap" class="mainbanner_products row">
                         <RecentArrivalsGoods></RecentArrivalsGoods>
                         <div class="mainbanner_products_preview">
                             <div class="mainbanner_products_preview_item">
