@@ -5,12 +5,13 @@ import { storeToRefs } from 'pinia';
 const ProductCompare = defineAsyncComponent(() => import('@/components/ProductCompare/ProductCompare.vue'));
 const comparisonsStore = useComparisonsStore();
 const { comparisons, comparisonCount } = storeToRefs(comparisonsStore);
+const { comparisonRemove } = useComparisonsStore();
 </script>
 
 <template>
     <div v-if="comparisonCount > 0" class="compare_list row">
-        <div style="position: relative;" v-for="(comparison,index) in comparisons" @key="comparison?.data?.id">
-            <div @click="compareRemove(index)" class="compare_close">
+        <div style="position: relative;" v-for="comparison in comparisons" @key="comparison?.data?.id">
+            <div @click="comparisonRemove(comparison?.data?.id)" class="compare_close">
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"
                     style="fill: white;transform: ;msFilter:;">
                     <path
@@ -21,11 +22,3 @@ const { comparisons, comparisonCount } = storeToRefs(comparisonsStore);
         <ProductCompare :product="comparison"></ProductCompare>
     </div>
 </div></template>
-
-<script>
-function compareRemove(id){
-    var a=[]
-    a=JSON.stringify(localStorage.getItem("comparisons"))
-    a.splice(1,1)
-}
-</script>
