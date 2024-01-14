@@ -932,7 +932,7 @@
 
 .header .header_icon .compare:hover svg path,
 .header .header_icon .compare.active svg path {
-    stroke: #EC2A00;
+    // stroke: #EC2A00;
 }
 
 .header .header_icon .faw.active svg path,
@@ -2401,6 +2401,7 @@ align-items: center;
 }
 .korzina_tovar_big{
     display: block;
+    margin-top: 2.083vw;
 }
 .korzina_tovar_big_div1{
     display: flex;
@@ -2480,13 +2481,78 @@ align-items: center;
     color: #8C8C8C;
 }
 .korzina_tovar_big_div_price h1{
-    font-size: 1.354vw;
+    font-size: 1.354vw !important;
     font-weight: 800;
 }
 .korzina_tovar_big_div_btn button svg{
     width: 1.250vw;
     height: 1.250vw;
 }
+
+@media (max-width:768px) {
+    .korzina_tovar_big_div{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        // display: grid !important;
+        // grid-template-columns: auto auto;
+        flex-wrap: wrap;
+    }
+    .korzina_tovar_big_div_price h1{
+        font-size: 25px !important;
+    }
+    .korzina_tovar_big_div_text{
+        margin-left: 10px;
+        padding-left: 0;
+    }
+    .korzina_tovar_big_div_price{
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .korzina_tovar_big_div_btn{
+        width: 100%;
+        padding-left: 10px;
+        border: 0;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .korzina_tovar_big_div_btn p{
+        width: 100%;
+        font-size: 13px !important;
+        margin-bottom: 10px;
+    }
+    .korzina_tovar_big_div_btn button{
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 15px;
+        margin-right: 10px;
+    }
+    .korzina_tovar_big_div_btn button svg{
+        width: 25px;
+        height: 25px;
+    }
+    .korzina_tovar_big_div1 p{
+        font-size: 15px !important;
+    }
+    .korzina_tovar_big_div1 {
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .korzina_tovar_big_div1_close{
+        width: 25px;
+        height: 25px;
+    }
+    .korzina_tovar_big_div1_close svg{
+        width: 20px;
+        height: 20px;
+    }
+}
+
 
 .text_page_top {
     position: relative;
@@ -2687,11 +2753,11 @@ align-items: center;
 
 .compare_close{
     position: absolute;
-    top: 10px;
-    right: 60px;
+    top: 0.521vw;
+    right: 3.125vw;
     z-index: 100;
-    width: 26px;
-    height: 26px;
+    width: 1.354vw;
+    height: 1.354vw;
     cursor: pointer;
     border-radius: 1px;
     display: flex;
