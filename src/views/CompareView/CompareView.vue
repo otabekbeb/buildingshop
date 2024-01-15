@@ -15,12 +15,31 @@ const bradscubs = [
         active: true
     }
 ];
+
+
+    var korzina=localStorage.getItem("comparisons")?JSON.parse(localStorage.getItem("comparisons")).length:0
+    
+    var price=0
+
+    if(localStorage.getItem("comparisons")){
+        for (let i = 0; i < JSON.parse(localStorage.getItem("comparisons")).length; i++) {
+            price+=JSON.parse(localStorage.getItem("comparisons"))[i].data.priceLess100000
+        }
+    }
+    
+
+const cleraLocalStorage=()=>{
+    localStorage.removeItem("comparisons")
+    window.location.reload()
+}
+
+
 </script>
 
 <template>
     <LayoutShort>
         <div class="text_page compare">
-            <div class="container">
+            <div style="min-height: 500px;" class="container">
                 <div class="text_page_top">
                     <h1>ваши заказанные <b>товары</b></h1>
                     <Bradscubs :bradscubs="bradscubs"></Bradscubs>
@@ -28,10 +47,10 @@ const bradscubs = [
                 <ProductCompareList></ProductCompareList>
                 <div class="korzina_tovar_big">
                     <div class="korzina_tovar_big_div">
-                        <p class="korzina_tovar_big_div_text">В корзине <span>8</span> товаров</p>
+                        <p class="korzina_tovar_big_div_text">В корзине <span>{{korzina?korzina:0}}</span> товаров</p>
                         <div class="korzina_tovar_big_div_price">
                             <h1>итого:</h1>
-                            <h1>85000 ₽</h1>
+                            <h1>{{ price?price:0 }} ₽</h1>
                         </div>
                         <div class="korzina_tovar_big_div_btn">
                             <p>При нажатии на кнопку оформить заказ, будет сформирован весь нужный список товаров</p>
@@ -43,7 +62,7 @@ const bradscubs = [
                                 </svg>ОФОРМИТЬ ЗАКАЗ</button>
                         </div>
                     </div>
-                    <div class="korzina_tovar_big_div1">
+                    <div @click="cleraLocalStorage()" class="korzina_tovar_big_div1">
                         <p>Очистить корзину</p>
                         <div class="korzina_tovar_big_div1_close">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"

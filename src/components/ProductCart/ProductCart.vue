@@ -19,14 +19,15 @@ const countCart = ref(product?.countCart ?? 1);
 const countCartIncrement = () => countCart.value++;
 const countCartDecrement = () => countCart.value--;
 
-const cartAdd = () => {
-}
+
 
 watch(countCart, () => {
     if (countCart.value < 1) return countCart.value = 1;
 
     if (product?.countCart <= countCart.value) return product?.count;
 })
+
+
 </script>
 
 <template>
@@ -52,7 +53,7 @@ watch(countCart, () => {
             <div class="price_desc">Цена за штуку</div>
         </div>
         <div class="btns">
-            <button class="btn" @click="comparisonAdd(product)">заказать</button>
+            <button class="btn" @click="comparisonAdd(product,countCart)">заказать</button>
             <div class="count">
                 <input type="button" value="-" @click="countCartDecrement">
                 <input type="number" step="1" min="1" max="10" id="num_count" name="quantity" v-model="countCart"
