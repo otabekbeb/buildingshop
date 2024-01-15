@@ -28,7 +28,7 @@ const setLink = url => {
                         оптом</div>
                 </div>
                 <div class="footer_menu footer_menu1">
-                    <a href="">
+                    <!-- <a href="">
                         <div class="icon">
                             <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -37,7 +37,7 @@ const setLink = url => {
                             </svg>
                         </div>
                         <span>Написать нам</span>
-                    </a>
+                    </a> -->
                     <RouterLink :to="ROUTES.delivery">
                         <div class="icon">
                             <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -334,7 +334,7 @@ const setLink = url => {
             <div class="top_menu">
                 <a @click.prevent="setLink(ROUTES?.main)">ГЛАВНАЯ</a>
                 <a @click.prevent="setLink(ROUTES?.catalog)">Каталог</a>
-                <a href="">Написать нам</a>
+                <!-- <a href="">Написать нам</a> -->
                 <a @click.prevent="setLink(ROUTES?.delivery)">Доставка</a>
                 <a @click.prevent="setLink(ROUTES?.contacts)">Контакты</a>
                 <a :href="BACKEND_URL_API_PRICELIST" download>Скачать прайс</a>
