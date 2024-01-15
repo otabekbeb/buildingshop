@@ -1757,7 +1757,8 @@ margin-left: 2vw;
     margin-left: 1vw;
 }
 .pagination_div_number h4{
-    margin-right: 8px;
+    cursor: pointer;
+    margin-left: 10px;
     margin-bottom: 0;
 text-align: center;
 font-family: Commissioner;
@@ -2401,6 +2402,7 @@ align-items: center;
 }
 .korzina_tovar_big{
     display: block;
+    margin-top: 30px;
 }
 .korzina_tovar_big_div1{
     display: flex;
