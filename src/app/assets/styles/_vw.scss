@@ -1000,7 +1000,7 @@
     }
 
     .product_cart_compare {
-        margin-right: 2.56vw;
+        margin-right: 0 !important;
     }
 
     .compare_property {
@@ -1464,6 +1464,9 @@
         .product_cart .btns{
             width: 50vw !important;
             height: 10vw !important;
+        }
+        .for_comparisonCount{
+            width: 100% !important;
         }
         .product_cart .btns .btn{
             font-size: 2.4vw !important;
@@ -2196,7 +2199,12 @@
             padding: 0;
             flex-direction: column;
         }
-
+.for_comparisonCount{
+    width: 49%;
+}
+.products_list .product_cart{
+    width: 49%;
+}
         .product_cart {
             width: 100%;
             height: 32vw;

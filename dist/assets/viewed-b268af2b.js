@@ -1,0 +1,1 @@
+import{h as o,i as r,q as d}from"./index-9c88fb43.js";const v=o("viewed",()=>{const e=r(JSON.parse(localStorage.getItem("vieweds"))??[]),i=s=>{var t;((t=e.value)==null?void 0:t.findIndex(a=>a==s.id))===-1&&(e.value=[...e.value,s])};return d(e,()=>{const s=JSON.stringify(e.value);localStorage.setItem("vieweds",s)}),{vieweds:e,viewedAdd:i}});export{v as u};

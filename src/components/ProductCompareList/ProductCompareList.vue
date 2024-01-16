@@ -9,8 +9,8 @@ const { comparisonRemove } = useComparisonsStore();
 </script>
 
 <template>
-    <div v-if="comparisonCount > 0" class="compare_list row">
-        <div style="position: relative;" v-for="comparison in comparisons" @key="comparison?.data?.id">
+    <div v-if="comparisonCount > 0" style="gap: 1.4vw; justify-content: center;flex-direction: row;" class="compare_list row">
+        <div class="for_comparisonCount" style="position: relative;" v-for="comparison in comparisons" @key="comparison?.data?.id">
             <div @click="comparisonRemove(comparison?.data?.id)" class="compare_close">
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"
                     style="fill: white;transform: ;msFilter:;">

@@ -1,0 +1,1 @@
+import{f as t,g as e}from"./Search-f8152317.js";import{h as p,i as s}from"./index-9c88fb43.js";const c=p("popular",()=>{const o=s([]);return{popular:o,popularAsyncGet:async(r="")=>(console.log(r),t.get(e+"/popular"+r).then(a=>{o.value=a.data}))}});export{c as u};
