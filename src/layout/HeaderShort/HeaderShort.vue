@@ -43,7 +43,7 @@ import { ROUTES } from '@/app/router/helper';
                             </div>
                             <span>Скачать прайс</span>
                         </a>
-                        <a href="">
+                        <!-- <a href="">
                             <div class="icon">
                                 <svg width="11" height="11" viewBox="0 0 11 11" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -53,7 +53,7 @@ import { ROUTES } from '@/app/router/helper';
                                 </svg>
                             </div>
                             <span>Написать нам</span>
-                        </a>
+                        </a> -->
                         <RouterLink :to="ROUTES.delivery">
                             <div class="icon">
                                 <svg width="15" height="16" viewBox="0 0 15 16" fill="none"

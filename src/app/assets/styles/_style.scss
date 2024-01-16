@@ -803,7 +803,7 @@
 }
 
 .header_icon .compare:hover svg path {
-    stroke: #FF781F;
+    stroke: #EC2A00;
 }
 
 .header_icon .faw:hover svg path {
@@ -932,7 +932,7 @@
 
 .header .header_icon .compare:hover svg path,
 .header .header_icon .compare.active svg path {
-    stroke: #EC2A00;
+    // stroke: #EC2A00;
 }
 
 .header .header_icon .faw.active svg path,
@@ -2488,6 +2488,245 @@ align-items: center;
 .korzina_tovar_big_div_btn button svg{
     width: 1.250vw;
     height: 1.250vw;
+}
+.modal_korzina{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: #373737D6;
+    z-index: 100;
+    overflow-y: scroll;
+    display: none;
+}
+.modal_korzina_div{
+    display: flex;
+    align-items: stretch;
+}
+.modal_korzina_div_img_fon{
+    background: #FF781F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.042vw;
+}
+.modal_korzina_div_form{
+    width: 41.927vw;
+    height: 17.6vw;
+    background: #333333;
+}
+.modal_korzina_div_form_close{
+    width: 1.615vw;
+    height: 1.615vw;
+    background: #5C5C5C;
+    cursor: pointer;
+    margin-top: 0.521vw;
+    margin-right: 0.521vw;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal_korzina_div_form_close{
+    width: 1.315vw;
+    height: 1.315vw;
+}
+.modal_korzina_div_form_div{
+    margin: auto;
+}
+.modal_korzina_div_img_fon img{
+    width: 3.646vw;
+}
+.modal_korzina_div_form_div input{
+    width: 15.625vw;
+    height: 2.344vw;
+    color: white;
+    background: #5A5A5A;
+    border: 1px solid #FF781F;
+    padding-left: 1.302vw;
+    font-size: 0.781vw;
+}
+.modal_korzina_div_form_div input::placeholder{
+    color: white;
+}
+.modal_korzina_div_form_div_check{
+    width: 15.625vw;
+    height: auto !important;
+    display: flex;
+    align-items: center;
+    gap: 0.521vw;
+}
+.modal_korzina_div_form_div_check p{
+    font-size: 0.521vw;
+    font-weight: 500;
+    line-height: 0.542vw;
+    color: #999999;
+    padding: 0;
+}
+.modal_korzina_div_form_div_check input{
+    width: 1.667vw !important; 
+    height: 1.667vw !important;
+    background: #656565 !important;
+    border: 1px solid #FF781F !important;
+}
+.modal_korzina_div_form_div button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.042vw;
+    width: 15.625vw;
+    height: 2.708vw;
+    background: #FF781F;
+    color: white;
+    font-size: 0.938vw;
+    font-weight: 700;
+    border: 0;
+    border-radius: 0.104vw;
+}
+.modal_korzina_div_form_div button svg{
+    width: 1.302vw;
+    height: 1.302vw;
+}
+.modal_korzina_div_form_div{
+    width: 32.813vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.042vw;
+    margin-top: 1.563vw;
+}
+
+@media (max-width:768px) {
+    .compare_close{
+        right: 10px !important;
+    }
+    .korzina_tovar_big_div{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        // display: grid !important;
+        // grid-template-columns: auto auto;
+        flex-wrap: wrap;
+    }
+    .korzina_tovar_big_div_price h1{
+        font-size: 25px !important;
+    }
+    .korzina_tovar_big_div_text{
+        margin-left: 10px;
+        padding-left: 0;
+    }
+    .korzina_tovar_big_div_price{
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .korzina_tovar_big_div_btn{
+        width: 100%;
+        padding-left: 10px;
+        border: 0;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .korzina_tovar_big_div_btn p{
+        width: 100%;
+        font-size: 13px !important;
+        margin-bottom: 10px;
+    }
+    .korzina_tovar_big_div_btn button{
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 15px;
+        margin-right: 10px;
+    }
+    .korzina_tovar_big_div_btn button svg{
+        width: 25px;
+        height: 25px;
+    }
+    .korzina_tovar_big_div1 p{
+        font-size: 15px !important;
+    }
+    .korzina_tovar_big_div1 {
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .korzina_tovar_big_div1_close{
+        width: 25px;
+        height: 25px;
+    }
+    .korzina_tovar_big_div1_close svg{
+        width: 20px;
+        height: 20px;
+    }
+    .modal_korzina_div{
+        display: block;
+    }
+    .modal_korzina_div_img_fon img{
+        transform: rotate(90deg);
+        width: 20%;
+    }
+    .modal_korzina_div_img_fon{
+        padding: 0px;
+        height: 35vw;
+    }
+    .modal_korzina_div{
+        width: 90%;
+    }
+    .modal_korzina_div_form{
+        width: 100%;
+        margin-top: -10px;
+        height: auto;
+        padding-top: 10px;
+    }
+    .modal_korzina_div_form_div input{
+        width: 100%;
+        height: 40px;
+        font-size: 16px;
+        padding-left: 20px;
+    }
+    .modal_korzina_div_form_div{
+        width: 95%;
+        padding-bottom: 20px;
+    }
+    .modal_korzina_div_form_div_check{
+        width: 100%;
+        gap: 10px;
+        margin-top: 30px;
+    }
+    .modal_korzina_div_form_div_check input{
+        width: 20px !important;
+        height: 20px !important;
+    }
+    .modal_korzina_div_form_div_check p{
+        width: 90%;
+        font-size: 13px;
+        line-height: normal;
+    }
+    .modal_korzina_div_form_div button{
+        width: 100%;
+        font-size: 18px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-top: 10px;
+    }
+    .modal_korzina_div_form_div button svg{
+        width: 20px;
+        height: 20px;
+    }
+    .modal_korzina_div_form_close{
+        width: 30px;
+        height: 30px;
+        margin-right: 2.8%;
+    }
 }
 
 .text_page_top {
