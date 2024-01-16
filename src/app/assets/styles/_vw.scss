@@ -2833,7 +2833,7 @@
 
         .product_content_inf_b {
             margin-left: 0;
-            flex-direction: column;
+            // flex-direction: column;
         }
 
         .product_content_inf_b .prices {
@@ -2957,5 +2957,13 @@
         .cartelement_tab_content_item h2 {
             font-size: 16px;
         }
+    }
+}
+@media(max-width:460px){
+    .product_content_inf_b{
+        flex-direction: column;
+    }
+    .product_content_inf_b .prices{
+        bottom: 0 !important;
     }
 }
