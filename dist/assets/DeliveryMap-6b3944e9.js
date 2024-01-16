@@ -1,0 +1,1 @@
+import{o as e}from"./Search-1728f339.js";import{a as r,c}from"./index-1e78f834.js";const o={},t={src:"https://yandex.ru/map-widget/v1/?um=constructor%3A5ca7d784f193de089359443aadeab7decc7f2edb498576f7ff81aa714dd34d16&source=constructor",frameborder:"0"};function a(s,d){return r(),c("iframe",t)}const m=e(o,[["render",a]]);export{m as default};
