@@ -37,7 +37,7 @@ const isActive = ref(false);
 
 <template>
     <div class="search_panel_text">Доставка в день заказа </div>
-    <div v-click-outside="(() => isActive = false)">
+    <div style="position:relative;" v-click-outside="(() => isActive = false)">
         <form class="search" @input="onSubmit" @submit.prevent>
             <input type="text" name="SearchName" v-bind="SearchName" placeholder="Поиск стройматериалов">
             <button type="submit">
@@ -73,7 +73,6 @@ const isActive = ref(false);
     background-color: white;
     padding: 10px;
     position: absolute;
-    right: 200px;
     top: 50px;
     overflow: auto;
     max-width: 800px;
@@ -92,17 +91,18 @@ const isActive = ref(false);
 }
 
 .search-block__category {
-    font-size: 14px;
+    font-size: 1vw;
     opacity: .7;
 }
 
 .search-block__title {
     display: block;
     margin: 4px 0;
+    font-size: 1.1vw;
 }
 
 .search-block__price {
-    font-size: 14px;
+    font-size: 1vw;
     font-weight: 700;
 }
 </style>
