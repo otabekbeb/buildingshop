@@ -216,7 +216,7 @@ const setSwitcher = (number) => (switcher.value = number);
       </div>
       <div class="sub_description">
         <b>Комплектация</b>
-        {{ equipment }}
+        <p>Сварочный полуавтомат – 1 шт.; Горелка 3 м – 1 шт.; Кабель заземления, медь 3 м – 1шт.; Кабель с электрододержателем, медь 1,6 м – 1 шт.; Газовый шланг 3 м – 1 шт.; Ролик 0,6-0,8 мм – 1 шт.</p>
       </div>
       <div class="product_content_inf_b">
         <div class="btns">

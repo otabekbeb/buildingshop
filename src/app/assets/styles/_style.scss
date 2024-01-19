@@ -1026,7 +1026,8 @@
 
 .mainbanner_form {
     position: relative;
-    width: 402px;
+    max-width: 402px;
+    width: 100%;
     min-height: 406px;
     background: #FF781F;
     display: flex;
@@ -1058,7 +1059,7 @@
     padding: 0 23px;
     color: #616161;
     font-family: Inter;
-    font-size: 14px;
+    font-size: 12px;
     font-style: normal;
     font-weight: 500;
     line-height: 142.023%;
@@ -1073,7 +1074,7 @@
     height: 52px;
     color: #fff;
     font-family: Inter;
-    font-size: 18px;
+    font-size: 12px;
     font-style: normal;
     margin-top: 7px;
     font-weight: 700;
