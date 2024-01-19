@@ -9,9 +9,13 @@ export const useComparisonsStore = defineStore('comparison', () => {
 
     const checkComparison = (id) => comparisons?.value?.findIndex(item => item.data.id === id) !== -1;
 
-    const comparisonAdd = comparison => {
+    const comparisonAdd = (comparison,salom) => {
+        var a=[comparison]
+        for (let i = 0; i < a.length; i++) {
+            a[i].countCart=salom
+        }
         const newComparsion = {
-            data: comparison
+            data: a[0],
         };
 
         comparisons.value = [...comparisons.value, newComparsion];

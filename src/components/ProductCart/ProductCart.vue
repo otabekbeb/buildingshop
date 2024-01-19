@@ -26,7 +26,6 @@ watch(countCart, () => {
     if (countCart.value < 1) return countCart.value = 1;
 
     if (product?.countCart <= countCart.value) return product?.count;
-
 })
 
 
@@ -51,7 +50,7 @@ watch(countCart, () => {
             </template>
         </div>
         <div class="prices">
-            <div class="price">{{ ((product?.priceLess100000 ?? 0) * countCart)?.toLocaleString() }} ₽</div>
+            <div class="price">{{product?.priceLess100000 ?? 0}} ₽</div>
             <div class="price_desc">Цена за штуку</div>
         </div>
         <div class="btns">
