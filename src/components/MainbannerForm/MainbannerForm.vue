@@ -2,11 +2,15 @@
 import { defineProps } from 'vue';
 import MainbannerFormOnly from '@/components/MainbannerFormOnly/MainbannerFormOnly.vue';
 
+
+
 const props = defineProps({
     closeModal: {
         type: Function
     }
+    
 });
+
 </script>
 
 <template>
