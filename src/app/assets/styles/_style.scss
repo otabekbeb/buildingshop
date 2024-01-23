@@ -1026,6 +1026,7 @@
 
 .mainbanner_form {
     position: relative;
+    padding-top: 50px !important;
     max-width: 402px;
     width: 100%;
     min-height: 406px;
@@ -3936,4 +3937,20 @@ align-items: center;
     .size_for_media{
         line-height: 17px;
     }
+}
+.close_icons{
+    margin: auto;
+    margin-right: 0;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 100;
+    font-size: 35px;
+    cursor: pointer;
+    right: 20px;
+    top: 5px;
+    position: absolute;
+    z-index: 1111;
+}
+.modal__inner{
+    position: relative;
 }

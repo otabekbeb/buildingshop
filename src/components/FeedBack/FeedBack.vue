@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import Modal from '@/components/Modal/Modal.vue';
 import MainbannerForm from '@/components/MainbannerForm/MainbannerForm.vue';
 
-const activeModal = ref(false);
+const activeModal = ref(false); 
 </script>
 
 <template>
@@ -18,6 +18,7 @@ const activeModal = ref(false);
         <i>Обратный звонок</i>
     </div>
     <Modal v-if="activeModal" :outClick="(() => activeModal = false)">
+    <h1 class="close_icons" @click="(activeModal = false)">x</h1>
         <MainbannerForm />
     </Modal>
 </template>
