@@ -2521,6 +2521,46 @@ align-items: center;
     height: 17.6vw;
     background: #333333;
 }
+.modal_buyurtma{
+    background: #373737D6;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.modal_buyurtma_div{
+    width: 15.625vw;
+    background: #333333;
+    border-radius: 10px;
+}
+.modal_buyurtma_div p{
+    color: white;
+    text-align: center;
+    font-size: 0.938vw;
+    margin-top: 0.521vw;
+    margin-bottom: 0.521vw;
+}
+.modal_buyurtma_div_close{
+    width: 1.315vw;
+    height: 1.315vw;
+    background: #5C5C5C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: -0.521vw;
+    margin-top: -0.521vw;
+}
+.modal_buyurtma_div_close svg{
+    width: 1.315vw;
+    height: 1.315vw;
+}
 .modal_korzina_div_form_close{
     width: 1.615vw;
     height: 1.615vw;
@@ -2561,6 +2601,14 @@ align-items: center;
     display: flex;
     align-items: center;
     gap: 0.521vw;
+}
+.input_error{
+    color: red;
+    font-size: 0.721vw;
+    font-weight: 500;
+    line-height: 0.542vw;
+    padding-top: 0.221vw;
+    padding-bottom: 0px;
 }
 .modal_korzina_div_form_div_check p{
     font-size: 0.521vw;
@@ -2605,6 +2653,30 @@ align-items: center;
 }
 
 @media (max-width:768px) {
+    .modal_buyurtma_div{
+        width: 300px;
+        max-width: 90%;
+    }
+    .modal_buyurtma_div p{
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .modal_buyurtma_div_close{
+        width: 20px;
+        height: 20px;
+    }
+    .modal_buyurtma_div_close svg{
+        width: 20px;
+        height: 20px;
+    }
+    .modal_korzina_div_form_div label{
+        width: 100%;
+    }
+    .input_error {
+        font-size: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
     .compare_close{
         right: 10px !important;
     }

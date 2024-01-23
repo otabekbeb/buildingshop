@@ -44,35 +44,74 @@ const CloseModal=()=>{
 
 
 const PostKorzina=()=>{
-    var data=JSON.parse(localStorage.getItem("comparisons"))
+     if(document.querySelector("#name").value==""){
+        document.querySelector("#name").style="border:1px solid red;"
+        document.querySelectorAll(".input_error")[0].innerHTML="Заполните это место ?"
+     }else{
+        document.querySelectorAll(".input_error")[0].innerHTML=""
+        document.querySelector("#name").style="border:1px solid #FF781F;"
+     }
+
+     if(document.querySelector("#phone_number").value==""){
+        document.querySelector("#phone_number").style="border:1px solid red;"
+        document.querySelectorAll(".input_error")[1].innerHTML="Заполните это место ?"
+     }else{
+        document.querySelectorAll(".input_error")[1].innerHTML=""
+        document.querySelector("#phone_number").style="border:1px solid #FF781F;"
+     }
+
+     if(document.querySelector("#email").value==""){
+        document.querySelector("#email").style="border:1px solid red;"
+        document.querySelectorAll(".input_error")[2].innerHTML="Заполните это место ?"
+     }else{
+        document.querySelectorAll(".input_error")[2].innerHTML=""
+        document.querySelector("#email").style="border:1px solid #FF781F;"
+     }
+
+     if(document.querySelector("#description").value==""){
+        document.querySelector("#description").style="border:1px solid red;"
+        document.querySelectorAll(".input_error")[3].innerHTML="Заполните это место ?"
+     }else{
+        document.querySelectorAll(".input_error")[3].innerHTML=""
+        document.querySelector("#description").style="border:1px solid #FF781F;"
+     }
+
+     if(!document.querySelector("#checked_input").checked){
+        document.querySelector(".modal_korzina_div_form_div_check p").style="color:red;"
+     }else{
+        document.querySelector(".modal_korzina_div_form_div_check p").style="color:#999999;"
+     }
+
+     if(document.querySelector("#name").value!="" && document.querySelector("#phone_number").value!="" && document.querySelector("#email").value!="" && document.querySelector("#description").value!="" && document.querySelector("#checked_input").checked!=""){
+        var data=JSON.parse(localStorage.getItem("comparisons"))
+    var data1=[]
     for (let i = 0; i < data.length; i++) {
-        // data[i]=data[i].data
-        data[i].count=data[i].data.countCart
-        data[i].id=data[i].data.id
-        data[i].data=""
+        data1.push({
+            id:data[i].data.id,
+            count:data[i].data.countCart
+        })
     }
-    console.log(data,'salom');
     
     var formdata={
         "name":document.querySelector("#name").value,
         "phone":document.querySelector("#phone_number").value,
         "email":document.querySelector("#email").value,
         "description":document.querySelector("#description").value,
-        "items":data,
+        "items":data1,
     }
-    // formdata.append("name",document.querySelector("#name").value)
-    // formdata.append("phone",document.querySelector("#phone_number").value)
-    // formdata.append("email",document.querySelector("#email").value)
-    // formdata.append("description",document.querySelector("#description").value)
-    // formdata.append("items",data)
 
     axios.post('http://45.151.144.81:8001/api/order/submit',formdata).then(res=>{
-        alert("ishladi")
+        document.querySelector(".modal_buyurtma").style="display:flex;"
+        document.querySelector(".modal_korzina").style="display:none;"
     }).catch(err=>{
-        alert("ishlamadi")
+        alert("no")
     })
+     }
 }
 
+const CloseModal1=()=>{
+        document.querySelector(".modal_buyurtma").style="display:none;"
+}
 
 </script>
 
@@ -131,12 +170,24 @@ const PostKorzina=()=>{
                             </svg>
                     </div>
                     <div class="modal_korzina_div_form_div">
+                        <label for="">
                         <input id="name" placeholder="Ваше имя" type="text">
+                        <p class="input_error"></p>
+                        </label>
+                        <label for="">
                         <input id="phone_number" placeholder="Номер телефона" type="text">
+                        <p class="input_error"></p>
+                        </label>
+                        <label for="">
                         <input id="email" placeholder="Электронная почта" type="text">
+                        <p class="input_error"></p>
+                        </label>
+                        <label for="">
                         <input id="description" placeholder="Место доставки" type="text">
+                        <p class="input_error"></p>
+                        </label>
                         <div class="modal_korzina_div_form_div_check">
-                            <input type="checkbox">
+                            <input id="checked_input" type="checkbox">
                             <p>Нажимая на кнопку “отправить” вы даёте своё согласие на обработку персональных данных</p>
                         </div>
                         <button @click="PostKorzina()"><svg  viewBox="0 0 24 24" fill="none"
@@ -147,6 +198,14 @@ const PostKorzina=()=>{
                                 </svg>Оформить заказ</button>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="modal_buyurtma">
+            <div class="modal_buyurtma_div">
+                <div @click="CloseModal1()" class="modal_buyurtma_div_close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: white;transform: ;msFilter:;"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg>
+                </div>
+                <p>Заказ отправлен. Пожалуйста, подождите!</p>
             </div>
         </div>
     </LayoutShort>
