@@ -3,6 +3,7 @@ import { defineAsyncComponent } from 'vue';
 import { useViewedsStore } from '@/app/stores/modules/viewed';
 import { storeToRefs } from 'pinia';
 import ProductButtonsDefault from '@/components/ProductButtonsDefault/ProductButtonsDefault.vue';
+import Pagination from '@/components/Pagination/Pagination.vue';
 const ProductCart = defineAsyncComponent(() => import('@/components/ProductCart/ProductCart.vue'));
 
 const viewedsStore = useViewedsStore();
@@ -20,7 +21,8 @@ const { vieweds } = storeToRefs(viewedsStore);
             </ProductCart>
         </div>
     </div>
-    <div class="pagination_div">
+    <Pagination/>
+    <!-- <div class="pagination_div">
         <div class="pagination_div_orange">
             <h3>ПОКАЗАТЬ ЕЩЕ</h3>
         </div>
@@ -37,5 +39,5 @@ const { vieweds } = storeToRefs(viewedsStore);
             <div class="pagination_pagination"></div>
             <div id="for_gray" class="pagination_pagination"></div>
         </div>
-    </div>
+    </div> -->
 </template>
