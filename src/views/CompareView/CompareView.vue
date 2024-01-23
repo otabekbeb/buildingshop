@@ -3,6 +3,7 @@ import Bradscubs from '@/components/Bradscubs/Bradscubs.vue';
 import ProductCompareList from '@/components/ProductCompareList/ProductCompareList.vue';
 import LayoutShort from '@/layout/LayoutShort/LayoutShort.vue';
 import { ROUTES } from '@/app/router/helper';
+import axios from 'axios';
 const bradscubs = [
     {
         id: 1,
@@ -37,6 +38,39 @@ const OpenModal=()=>{
 }
 const CloseModal=()=>{
     document.querySelector(".modal_korzina").style="display:none;"
+}
+
+
+
+
+const PostKorzina=()=>{
+    var data=JSON.parse(localStorage.getItem("comparisons"))
+    for (let i = 0; i < data.length; i++) {
+        // data[i]=data[i].data
+        data[i].count=data[i].data.countCart
+        data[i].id=data[i].data.id
+        data[i].data=""
+    }
+    console.log(data,'salom');
+    
+    var formdata={
+        "name":document.querySelector("#name").value,
+        "phone":document.querySelector("#phone_number").value,
+        "email":document.querySelector("#email").value,
+        "description":document.querySelector("#description").value,
+        "items":data,
+    }
+    // formdata.append("name",document.querySelector("#name").value)
+    // formdata.append("phone",document.querySelector("#phone_number").value)
+    // formdata.append("email",document.querySelector("#email").value)
+    // formdata.append("description",document.querySelector("#description").value)
+    // formdata.append("items",data)
+
+    axios.post('http://45.151.144.81:8001/api/order/submit',formdata).then(res=>{
+        alert("ishladi")
+    }).catch(err=>{
+        alert("ishlamadi")
+    })
 }
 
 
@@ -97,15 +131,15 @@ const CloseModal=()=>{
                             </svg>
                     </div>
                     <div class="modal_korzina_div_form_div">
-                        <input placeholder="Ваше имя" type="text">
-                        <input placeholder="Номер телефона" type="text">
-                        <input placeholder="Электронная почта" type="text">
-                        <input placeholder="Место доставки" type="text">
+                        <input id="name" placeholder="Ваше имя" type="text">
+                        <input id="phone_number" placeholder="Номер телефона" type="text">
+                        <input id="email" placeholder="Электронная почта" type="text">
+                        <input id="description" placeholder="Место доставки" type="text">
                         <div class="modal_korzina_div_form_div_check">
                             <input type="checkbox">
                             <p>Нажимая на кнопку “отправить” вы даёте своё согласие на обработку персональных данных</p>
                         </div>
-                        <button><svg  viewBox="0 0 24 24" fill="none"
+                        <button @click="PostKorzina()"><svg  viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M5.03305 3.44444H23L20.5556 12H6.34931M21.7778 16.8889H7.11111L4.66667 1H1M8.33333 21.7778C8.33333 22.4528 7.78612 23 7.11111 23C6.4361 23 5.88889 22.4528 5.88889 21.7778C5.88889 21.1027 6.4361 20.5556 7.11111 20.5556C7.78612 20.5556 8.33333 21.1027 8.33333 21.7778ZM21.7778 21.7778C21.7778 22.4528 21.2306 23 20.5556 23C19.8805 23 19.3333 22.4528 19.3333 21.7778C19.3333 21.1027 19.8805 20.5556 20.5556 20.5556C21.2306 20.5556 21.7778 21.1027 21.7778 21.7778Z"
