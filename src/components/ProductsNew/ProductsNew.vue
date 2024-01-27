@@ -18,7 +18,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="new_product">
+  <div  class="new_product">
     <div class="new_product_top_while">
       <div class="container">
         <div class="title_products row">
@@ -33,20 +33,35 @@ onMounted(() => {
       <div
         style="gap: 1.4vw; justify-content: center;flex-direction: row;"
         class="products_list row"
+       
       >
         <ProductCart
-          v-for="product in newProducts?.items"
+          v-for="(product, index) in (newProducts.items?newProducts.items:[]).slice(0,3)"
           @key="product.id"
+        
+          :product="product"
+        >
+          <template v-slot:button-icons >
+            <ProductButtonsDefault :product="product" />
+          </template>
+        </ProductCart>
+        
+        <RouterLink
+          :to="ROUTES.catalog + '/new'"
+          class="banner_to_catalog"
+        ></RouterLink>
+
+           <ProductCart
+          v-for="(product, index) in (newProducts.items?newProducts.items:[]).slice(3)"
+         
+          @key="product.id"
+          
           :product="product"
         >
           <template v-slot:button-icons>
             <ProductButtonsDefault :product="product" />
           </template>
         </ProductCart>
-        <RouterLink
-          :to="ROUTES.catalog + '/new'"
-          class="banner_to_catalog"
-        ></RouterLink>
       </div>
     </div>
   </div>

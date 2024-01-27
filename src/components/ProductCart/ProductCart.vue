@@ -16,8 +16,37 @@ const props = defineProps({
 const { product } = props;
 
 const countCart = ref(product?.countCart ?? 1);
-const countCartIncrement = () => countCart.value++;
-const countCartDecrement = () => countCart.value--;
+const countCartIncrement = (aa) => {
+    countCart.value++;
+      
+    if(window.location.pathname=='/compare'){
+     
+      var shop=JSON.parse(localStorage.getItem('comparisons')?localStorage.getItem('comparisons'):'[]')
+   for(var i=0;i<shop.length;i++){
+    if(shop[i].data.id==aa){
+        shop[i].data.countCart++
+        
+    }
+   } 
+    localStorage.setItem('comparisons',JSON.stringify(shop)) 
+    }
+
+   
+};
+const countCartDecrement = (aa) => {
+    countCart.value--;
+ 
+
+       if(window.location.pathname=='/compare'){
+ var shop=JSON.parse(localStorage.getItem('comparisons')?localStorage.getItem('comparisons'):'[]')
+   for(var i=0;i<shop.length;i++){
+    if(shop[i].data.id==aa && shop[i].data.countCart>1){
+        shop[i].data.countCart--
+      
+    }
+   }
+   localStorage.setItem('comparisons',JSON.stringify(shop))}
+};
 
 
 
@@ -55,12 +84,15 @@ watch(countCart, () => {
         <div class="btns">
             <button class="btn" @click="comparisonAdd(product,countCart)">заказать</button>
             <div class="count">
-                <input type="button" value="-" @click="countCartDecrement">
+                <input type="button" value="-" @click="countCartDecrement(product.id)">
                 <input type="number" step="1" min="1" max="10" id="num_count" name="quantity" v-model="countCart"
                     title="Qty">
-                <input type="button" value="+" @click="countCartIncrement">
+                <input type="button" value="+" @click="countCartIncrement(product.id)">
             </div>
         </div>
     </div>
 </template>
 
+<script>
+
+</script>

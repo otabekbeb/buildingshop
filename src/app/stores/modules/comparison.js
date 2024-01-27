@@ -12,11 +12,8 @@ export const useComparisonsStore = defineStore('comparison', () => {
     const comparisonAdd = (comparison,salom) => {
        
 var a1=true
-console.log(comparisons.value);
         for (let i = 0; i < (comparisons.value).length; i++) {
                  if(comparisons.value[i].data.id==comparison.id){
-                    console.log(comparisons.value[i].data,"navsiga2");
-                    console.log(comparisons.value[i].data.countCart,"navsiga");
                     comparisons.value[i].data.countCart=comparisons.value[i].data.countCart+salom
                     a1=false
                  }   

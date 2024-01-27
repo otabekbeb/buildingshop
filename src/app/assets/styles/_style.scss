@@ -826,7 +826,7 @@
 .header_icon .compare:hover i {
     color: #EE3810;
 }
-.compare button{
+.compare .compare_list button{
 display: none !important;
 }
 .compare .count{
@@ -1961,6 +1961,7 @@ align-items: center;
     background-position: center;
     background-size: contain;
     width: 286px;
+   
     height: 437px;
     flex-shrink: 0;
     -webkit-transition: .3s linear;

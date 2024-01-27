@@ -20,14 +20,19 @@ const bradscubs = [
 
     var korzina=localStorage.getItem("comparisons")?JSON.parse(localStorage.getItem("comparisons")).length:0
     
+  var price=0
+    setInterval(()=>{
     var price=0
-var data_g=JSON.parse(localStorage.getItem("comparisons"))
-    if(localStorage.getItem("comparisons")){
-        for (let i = 0; i < JSON.parse(localStorage.getItem("comparisons")).length; i++) {
+    
+     var data_g=JSON.parse(localStorage.getItem("comparisons"))
+     if(localStorage.getItem("comparisons")){
+        for (let i = 0; i < data_g.length; i++) {
             price+=data_g[i].data.priceLess100000*data_g[i].data.countCart
         }
     }
-    
+    document.querySelector('#preice1').innerHTML=`${price} ₽`
+    document.querySelector('#karzinca').innerHTML=`${data_g.length}`
+    },1000)
 
 const cleraLocalStorage=()=>{
     localStorage.removeItem("comparisons")
@@ -126,10 +131,10 @@ const CloseModal1=()=>{
                 <ProductCompareList></ProductCompareList>
                 <div class="korzina_tovar_big">
                     <div class="korzina_tovar_big_div">
-                        <p class="korzina_tovar_big_div_text">В корзине <span>{{korzina?korzina:0}}</span> товаров</p>
+                        <p class="korzina_tovar_big_div_text">В корзине <span id="karzinca" >{{korzina?korzina:0}}</span> товаров</p>
                         <div class="korzina_tovar_big_div_price">
                             <h1>итого:</h1>
-                            <h1>{{ price?price:0 }} ₽</h1>
+                            <h1 id="preice1">{{ price?price:0 }} ₽</h1>
                         </div>
                         <div class="korzina_tovar_big_div_btn">
                             <p>При нажатии на кнопку оформить заказ, будет сформирован весь нужный список товаров</p>
