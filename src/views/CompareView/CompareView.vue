@@ -21,10 +21,10 @@ const bradscubs = [
     var korzina=localStorage.getItem("comparisons")?JSON.parse(localStorage.getItem("comparisons")).length:0
     
     var price=0
-
+var data_g=JSON.parse(localStorage.getItem("comparisons"))
     if(localStorage.getItem("comparisons")){
         for (let i = 0; i < JSON.parse(localStorage.getItem("comparisons")).length; i++) {
-            price+=JSON.parse(localStorage.getItem("comparisons"))[i].data.priceLess100000
+            price+=data_g[i].data.priceLess100000*data_g[i].data.countCart
         }
     }
     

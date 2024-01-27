@@ -24,7 +24,6 @@ const countCartDecrement = () => countCart.value--;
 
 watch(countCart, () => {
     if (countCart.value < 1) return countCart.value = 1;
-
     if (product?.countCart <= countCart.value) return product?.count;
 })
 
@@ -64,3 +63,4 @@ watch(countCart, () => {
         </div>
     </div>
 </template>
+

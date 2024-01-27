@@ -826,7 +826,12 @@
 .header_icon .compare:hover i {
     color: #EE3810;
 }
-
+.compare button{
+display: none !important;
+}
+.compare .count{
+    margin: auto;
+}
 .header_icon .faw i {
     display: block;
     margin-right: 9px;
