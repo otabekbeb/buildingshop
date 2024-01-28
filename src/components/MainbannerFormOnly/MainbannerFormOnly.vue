@@ -31,10 +31,21 @@ const onSubmit = async (values) => {
     //     })
     // });
     
+    var name1=document.querySelector('#name').value
+    var nomer1=document.querySelector('#phone').value
+    var check1=document.querySelector('.custom-checkbox').checked
+    console.log(check1)
+if(name1.length>5 && nomer1.length>7 && check1){
+ document.querySelector("#phone").style="border:1px solid #d65f10 !important" 
+ document.querySelector("#date221").style="color:white !important" 
+  document.querySelector("#name").style="border:1px solid #d65f10 !important" 
+  document.querySelector("#phone").value=""
+  document.querySelector("#name").value=""
+  document.querySelector('.custom-checkbox').checked=false
     await applicationAsyncCreate({
         ...values,
-        name:document.querySelector('#name').value,
-        phone:document.querySelector('#phone').value,
+        name:name1,
+        phone:nomer1,
         items: favorites?.map(item => {
             return {
                 id: item.id,
@@ -42,24 +53,43 @@ const onSubmit = async (values) => {
             }
         })
     });
-    console.log(values,"sinov")
-    // favoriteClear();
+}else{
+    if(!check1){
+    document.querySelector("#date221").style="color:red !important" 
+   
+    }else{
+    document.querySelector("#date221").style="color:white !important" 
+
+    }
+    if(name1.length<6){
+ document.querySelector("#name").style="border:2px solid red !important"  
+    }else{
+       document.querySelector("#name").style="border:1px solid #d65f10 !important"   
+    }
+    if(nomer1.length<7){
+ document.querySelector("#phone").style="border:2px solid red !important" 
+    }else{
+        document.querySelector("#phone").style="border:1px solid #d65f10 !important"  
+    }
+}
+
+
+
     if (typeof props.closeModal === 'function') props.closeModal();
 };
 </script>
 
 <template>
     <Form method="post" @submit="onSubmit" :validation-schema="schema">
-        <Field type="text" id="name" autocomplete="off" name="name" placeholder="Ваше имя" />
-        <ErrorMessage name="name" />
+        <Field type="text" id="name" autocomplete="off"
+         name="name" placeholder="Ваше имя" />
         <Field type="tel" id="phone" autocomplete="off" name="phone" required placeholder="Номер телефона" />
-        <ErrorMessage name="phone" />
         <button class="form_button" @click="onSubmit" type="submit">отправить
             заявку</button>
         <div class="agreement" >
             <input type="checkbox" class="custom-checkbox" name="happy" >
             <label class="Sdd" for="happy"></label>
-            <span>Нажимая на кнопку “отправить” вы даёте своё согласие на обработку персональных
+            <span id="date221">Нажимая на кнопку “отправить” вы даёте своё согласие на обработку персональных
                 данных</span>
         </div>
     </form>
