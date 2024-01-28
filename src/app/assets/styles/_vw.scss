@@ -366,13 +366,13 @@
     }
 
     .mainbanner_bg {
-        height: 21.145vw;
+        // height: 21.145vw;
     }
 
     .mainbanner_titles {
         padding: 2.4479vw 2.135vw;
         padding-right: 4.6875vw;
-        width: 34.895vw;
+        width: 32.895vw;
     }
 
     .mainbanner_titles h1 {
@@ -443,15 +443,16 @@
     //     margin-top: 0.989vw;
     // }
 
-    // .mainbanner_form form .custom-checkbox+label::before {
-    //     width: 1.145vw;
-    //     height: 1.145vw;
-    //     margin-right: 1.510vw;
-    // }
+    .mainbanner_form form .custom-checkbox+label::before {
+        width: 1.145vw;
+        height: 1.145vw;
+        margin-right: 1.510vw;
+    }
 
     .mainbanner_bg_photo {
         width: 16.25vw;
-        height: 20.989vw;
+        // height: 20.989vw;
+        height:400px;
     }
 
     .mainbanner_products_list {

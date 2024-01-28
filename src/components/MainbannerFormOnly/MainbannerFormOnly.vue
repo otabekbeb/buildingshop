@@ -30,16 +30,19 @@ const onSubmit = async (values) => {
     //         }
     //     })
     // });
+    
     await applicationAsyncCreate({
         ...values,
+        name:document.querySelector('#name').value,
+        phone:document.querySelector('#phone').value,
         items: favorites?.map(item => {
-            console.log(item);
             return {
                 id: item.id,
                 count: item?.countCart ?? 1
             }
         })
     });
+    console.log(values,"sinov")
     // favoriteClear();
     if (typeof props.closeModal === 'function') props.closeModal();
 };
@@ -47,15 +50,15 @@ const onSubmit = async (values) => {
 
 <template>
     <Form method="post" @submit="onSubmit" :validation-schema="schema">
-        <Field type="text" autocomplete="off" name="name" placeholder="Ваше имя" />
+        <Field type="text" id="name" autocomplete="off" name="name" placeholder="Ваше имя" />
         <ErrorMessage name="name" />
-        <Field type="tel" autocomplete="off" name="phone" required placeholder="Номер телефона" />
+        <Field type="tel" id="phone" autocomplete="off" name="phone" required placeholder="Номер телефона" />
         <ErrorMessage name="phone" />
-        <button class="form_button" type="submit">отправить
+        <button class="form_button" @click="onSubmit" type="submit">отправить
             заявку</button>
-        <div class="agreement">
-            <input type="checkbox" class="custom-checkbox" name="happy" checked="" disabled="">
-            <label for="happy"></label>
+        <div class="agreement" >
+            <input type="checkbox" class="custom-checkbox" name="happy" >
+            <label class="Sdd" for="happy"></label>
             <span>Нажимая на кнопку “отправить” вы даёте своё согласие на обработку персональных
                 данных</span>
         </div>

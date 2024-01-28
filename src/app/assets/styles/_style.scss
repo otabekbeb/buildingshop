@@ -948,7 +948,7 @@ display: none !important;
 .mainbanner_bg {
     position: relative;
     width: 100%;
-    height: 406px;
+    height: 400px;
     background: url("/images/mainbanner.png") no-repeat;
     background-position: center;
     background-size: cover;
@@ -1099,6 +1099,7 @@ display: none !important;
 .mainbanner_form form .agreement {
     color: #FFF;
     font-family: Inter;
+    position: relative;
     font-size: 10px;
     font-style: normal;
     font-weight: 500;
@@ -1121,9 +1122,9 @@ display: none !important;
     background-position: center;
     background-size: cover;
     width: 312px;
-    height: 403px;
+    // height: 403px;
     right: 0;
-    top: 0;
+    bottom: 0;
 }
 
 .mainbanner_products_list {
