@@ -31,17 +31,18 @@ const { currentCategory, currentCategoryWithPath } = categoryStore;
                         </RouterLink>
                     </div>
                     <ProductsCatalog :catalogId="route.params?.id" />
-                </div>
-            </div>
-        </div>
-        <div class="catalog_b_inf">
-            <div class="container row">
-                <div class="col-3 col-sm-12"></div>
+                 <div class="catalog_b_inf">
+                <div class="container row">
+               
                 <div class="col-9 col-sm-12">
                     <ProductsViewed />
+                 </div>
+            </div>
+        </div>
                 </div>
             </div>
         </div>
+       
         <Partners></Partners>
     </LayoutDefault>
 </template>

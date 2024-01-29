@@ -78,17 +78,17 @@ const bradscubs = [
                             :to="ROUTES.catalog + '/' + category.id">{{ category.name }}</RouterLink>
                     </div>
                     <ProductsCatalog />
-                </div>
-            </div>
-        </div>
-        <div class="catalog_b_inf">
+               <div class="catalog_b_inf">
             <div class="container row">
-                <div class="col-3 col-sm-12"></div>
                 <div class="col-9 col-sm-12">
                     <ProductsViewed />
                 </div>
             </div>
         </div>
+                </div>
+            </div>
+        </div>
+        
         <Partners></Partners>
     </LayoutDefault>
 </template>
