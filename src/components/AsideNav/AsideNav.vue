@@ -37,7 +37,8 @@ onMounted(() => {
                 </li>
             </ul>
             <div class="promobanner">
-                <img src="/images/banner_to_catalog.png">
+            <a href="/catalog/new">
+                <img src="/images/banner_to_catalog.png"></a>
             </div>
         </div>
     </div>
