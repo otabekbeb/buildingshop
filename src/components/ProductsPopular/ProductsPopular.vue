@@ -22,7 +22,7 @@ onMounted(() => {
       <div class="title_products row">
         <h2>Популярная продукция <b>Grand Line</b></h2>
         <div class="title_products_all_wrap">
-          <a href="" class="title_products_all">все новинки</a>
+          <a href="/catalog/new" class="title_products_all">все новинки</a>
         </div>
       </div>
       <div

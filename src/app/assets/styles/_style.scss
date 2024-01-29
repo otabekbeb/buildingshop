@@ -2029,6 +2029,7 @@ align-items: center;
 .partners.partners_contacts {
     padding-bottom: 75px;
     padding-top: 163px;
+    
 }
 
 .partners.partners_catalog {
@@ -3149,9 +3150,9 @@ align-items: center;
 
 
 .text_page .header_menu_wrap {
-    position: absolute;
-    left: 0;
-    top: 0;
+    // position: absolute;
+    // left: 0;
+    // top: 0;
     padding: 0;
 }
 
@@ -3190,7 +3191,8 @@ align-items: center;
 }
 
 .text_page.fav .col-9 {
-    margin-left: 428px;
+    // margin-left: 428px;
+    padding-left:5% ;
 }
 
 .fav_info_text .col-8 {
