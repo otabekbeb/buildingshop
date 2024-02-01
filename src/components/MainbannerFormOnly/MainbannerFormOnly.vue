@@ -34,8 +34,9 @@ const onSubmit = async (values) => {
     var name1=document.querySelector('#name').value
     var nomer1=document.querySelector('#phone').value
     var check1=document.querySelector('.custom-checkbox').checked
+    var check2=document.querySelector('#big_div_for_checkbox').checked
     console.log(check1)
-if(name1.length>5 && nomer1.length>7 && check1){
+if(name1.length>5 && nomer1.length>7 && check1.length>7 && check2){
  document.querySelector("#phone").style="border:1px solid #d65f10 !important" 
  document.querySelector("#date221").style="color:white !important" 
   document.querySelector("#name").style="border:1px solid #d65f10 !important" 
@@ -54,6 +55,13 @@ if(name1.length>5 && nomer1.length>7 && check1){
         })
     });
 }else{
+    if(!check2) {
+        document.querySelector("#big_div_for_checkbox").style = "display:flex"
+        document.querySelector(".qora_for_check").style = "display:flex;"
+    }else {
+        document.querySelector("#date221").style = "display:none;"
+    }
+
     if(!check1){
     document.querySelector("#date221").style="color:red !important" 
    
@@ -77,7 +85,61 @@ if(name1.length>5 && nomer1.length>7 && check1){
 
     if (typeof props.closeModal === 'function') props.closeModal();
 };
+
+    function close_for_check() {}
 </script>
+
+<style>
+    .qora_for_check {
+        display: none;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(55, 55, 55, 0.84);
+        z-index: 1000;
+    }
+    .big_div_for_checkbox_input {
+        display: none;
+        position: fixed;
+        top: 40%;
+        left: 40%;
+        right: 30%;
+        bottom: 50%;
+    }
+
+    .div_for_checkbox_input {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        max-width: 300px;
+        height: 116px;
+        padding: 0 1rem;
+        border-radius: 8px;
+        background: #333;
+        box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.22);
+    }
+
+    #close_for_check {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        font-size: 18px;
+        font-weight: 700;
+        cursor: pointer;
+        color: #FF781F;
+    }
+
+    .big_div_for_checkbox_input samp {
+        font-size: 12px;
+        line-height: 15px;
+        font-weight: 700;
+        color: #fff;
+    }
+</style>
 
 <template>
     <Form method="post" @submit="onSubmit" :validation-schema="schema">
@@ -91,6 +153,14 @@ if(name1.length>5 && nomer1.length>7 && check1){
             <label class="Sdd" for="happy"></label>
             <span id="date221">Нажимая на кнопку “отправить” вы даёте своё согласие на обработку персональных
                 данных</span>
+                <div class="qora_for_check">
+                    <div id="big_div_for_checkbox" class="big_div_for_checkbox_input">
+                        <div class="div_for_checkbox_input">
+                            <p id="close_for_check" onclick="close_for_check()">x</p>
+                            <samp>Требуется подтвердить согласие на обработку персональных данных.</samp>
+                        </div>
+                    </div>
+                </div>
         </div>
     </form>
 </template>
