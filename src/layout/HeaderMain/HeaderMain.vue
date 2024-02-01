@@ -11,7 +11,34 @@ import MainbannerFormMob from '@/components/MainbannerFormMob/MainbannerFormMob.
 import FeedBack from '@/components/FeedBack/FeedBack.vue';
 import Search from '@/components/Search/Search.vue';
 import { BACKEND_URL_API_PRICELIST } from '@/app/stores/helper';
+
+    function maain_baner_cards() {
+        document.querySelector("#mainbanner_products_preview_item1").style = "scale: 1.05; transition: 0.5s; z-index: 10;"
+        document.querySelector("#mainbanner_products_preview_item2").style = "scale: 1.0; transition: 0.5s;"
+
+    }
+
+    function maain_baner_cards2() {
+        document.querySelector("#mainbanner_products_preview_item2").style = "scale: 1.05; transition: 0.5s;"
+        document.querySelector("#mainbanner_products_preview_item1").style = "scale: 1.0; transition: 0.5s;"
+    }
+
+    function mainbanner_productss() {
+        document.querySelector("#mainbanner_products_preview_item2").style = "scale: 1.0; transition: 0.5s;"
+        document.querySelector("#mainbanner_products_preview_item1").style = "scale: 1.0; transition: 0.5s;"
+    }
 </script>
+
+<!-- <style>
+    .mainbanner_products_preview_conyainer_big {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+</style> -->
 
 <template>
     <div>
@@ -111,8 +138,9 @@ import { BACKEND_URL_API_PRICELIST } from '@/app/stores/helper';
                     </div>
                     <div style="flex-wrap:nowrap" class="mainbanner_products row">
                         <RecentArrivalsGoods></RecentArrivalsGoods>
+                        <div @click="mainbanner_productss" class="mainbanner_products_preview_conyainer_big"></div>
                         <div class="mainbanner_products_preview">
-                            <div class="mainbanner_products_preview_item">
+                            <div id="mainbanner_products_preview_item1" @click="maain_baner_cards" class="mainbanner_products_preview_item">
                                 <div class="photo"><img src="/images/catalog/list/MaskGroup-2.png" /></div>
                                 <div class="text">
                                     <RouterLink :to="ROUTES.catalog + '/new'" class="name">Все для окрашивания потолка
@@ -121,7 +149,8 @@ import { BACKEND_URL_API_PRICELIST } from '@/app/stores/helper';
                                         получаете по себестоимости, то есть по оптовой цене!</div>
                                 </div>
                             </div>
-                            <div class="mainbanner_products_preview_item">
+
+                            <div id="mainbanner_products_preview_item2" @click="maain_baner_cards2" class="mainbanner_products_preview_item">
                                 <div class="photo"><img src="/images/catalog/list/MaskGroup.png" /></div>
                                 <div class="text">
                                     <RouterLink :to="ROUTES.catalog + '/new'" class="name">Фасадные краски: все виды

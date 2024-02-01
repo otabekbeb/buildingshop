@@ -36,13 +36,17 @@ const onSubmit = async (values) => {
     var check1=document.querySelector('.custom-checkbox').checked
     var check2=document.querySelector('#big_div_for_checkbox').checked
     console.log(check1)
-if(name1.length>5 && nomer1.length>7 && check1.length>7 && check2){
- document.querySelector("#phone").style="border:1px solid #d65f10 !important" 
- document.querySelector("#date221").style="color:white !important" 
-  document.querySelector("#name").style="border:1px solid #d65f10 !important" 
-  document.querySelector("#phone").value=""
-  document.querySelector("#name").value=""
-  document.querySelector('.custom-checkbox').checked=false
+if(name1.length>5 && nomer1.length>7 && check1.length>5 && check2){
+    document.querySelector("#phone").style="border:1px solid #d65f10 !important" 
+    document.querySelector("#date221").style="color:white !important" 
+    document.querySelector("#name").style="border:1px solid #d65f10 !important" 
+    document.querySelector("#big_div_for_checkbox").style = "display:none;"
+    document.querySelector(".qora_for_check").style = "display:none;"
+    document.querySelector("#phone").value=""
+    document.querySelector("#name").value=""
+    document.querySelector('.custom-checkbox').checked=false
+    // document.querySelector('.qora_for_check').checked=false
+    // document.querySelector('#big_div_for_checkbox').checked=false
     await applicationAsyncCreate({
         ...values,
         name:name1,
@@ -59,7 +63,8 @@ if(name1.length>5 && nomer1.length>7 && check1.length>7 && check2){
         document.querySelector("#big_div_for_checkbox").style = "display:flex"
         document.querySelector(".qora_for_check").style = "display:flex;"
     }else {
-        document.querySelector("#date221").style = "display:none;"
+        document.querySelector("#big_div_for_checkbox").style = "display:none;"
+        document.querySelector(".qora_for_check").style = "display:none;"
     }
 
     if(!check1){
@@ -86,7 +91,10 @@ if(name1.length>5 && nomer1.length>7 && check1.length>7 && check2){
     if (typeof props.closeModal === 'function') props.closeModal();
 };
 
-    function close_for_check() {}
+    function close_for_check() {
+        document.querySelector("#big_div_for_checkbox").style = "display:none;"
+        document.querySelector(".qora_for_check").style = "display:none;"
+    }
 </script>
 
 <style>
@@ -156,7 +164,7 @@ if(name1.length>5 && nomer1.length>7 && check1.length>7 && check2){
                 <div class="qora_for_check">
                     <div id="big_div_for_checkbox" class="big_div_for_checkbox_input">
                         <div class="div_for_checkbox_input">
-                            <p id="close_for_check" onclick="close_for_check()">x</p>
+                            <p id="close_for_check" @click="close_for_check">x</p>
                             <samp>Требуется подтвердить согласие на обработку персональных данных.</samp>
                         </div>
                     </div>
