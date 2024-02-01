@@ -15,6 +15,8 @@ const props = defineProps({
 
 const { product } = props;
 
+console.log(product);
+
 const countCart = ref(product?.countCart ?? 1);
 const countCartIncrement = (aa) => {
     countCart.value++;
@@ -56,11 +58,20 @@ watch(countCart, () => {
     if (product?.countCart <= countCart.value) return product?.count;
 })
 
+function product_cart_sacele() {
+  const productCarts = document.querySelectorAll(".product_cart");
+  for (let i = 0; i < productCarts.length; i++) {
+    productCarts[i].addEventListener("click", function() {
+      this.style.transform = "scale(1.05)";
+      this.style.transition = "0.5s";
+    });
+  }
+}
 
 </script>
 
-<template>
-    <div class="product_cart">
+<template>  
+    <div @click="product_cart_sacele" class="product_cart">
         <div class="icons">
             <slot name="button-icons"></slot>
         </div>

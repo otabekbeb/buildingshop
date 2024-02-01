@@ -11,34 +11,7 @@ import MainbannerFormMob from '@/components/MainbannerFormMob/MainbannerFormMob.
 import FeedBack from '@/components/FeedBack/FeedBack.vue';
 import Search from '@/components/Search/Search.vue';
 import { BACKEND_URL_API_PRICELIST } from '@/app/stores/helper';
-
-    function maain_baner_cards() {
-        document.querySelector("#mainbanner_products_preview_item1").style = "scale: 1.05; transition: 0.5s; z-index: 10;"
-        document.querySelector("#mainbanner_products_preview_item2").style = "scale: 1.0; transition: 0.5s;"
-
-    }
-
-    function maain_baner_cards2() {
-        document.querySelector("#mainbanner_products_preview_item2").style = "scale: 1.05; transition: 0.5s;"
-        document.querySelector("#mainbanner_products_preview_item1").style = "scale: 1.0; transition: 0.5s;"
-    }
-
-    function mainbanner_productss() {
-        document.querySelector("#mainbanner_products_preview_item2").style = "scale: 1.0; transition: 0.5s;"
-        document.querySelector("#mainbanner_products_preview_item1").style = "scale: 1.0; transition: 0.5s;"
-    }
 </script>
-
-<!-- <style>
-    .mainbanner_products_preview_conyainer_big {
-        width: 100%;
-        height: 100vh;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-    }
-</style> -->
 
 <template>
     <div>

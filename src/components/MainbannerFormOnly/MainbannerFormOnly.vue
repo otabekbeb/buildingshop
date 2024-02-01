@@ -59,18 +59,16 @@ if(name1.length>5 && nomer1.length>7 && check1.length>5 && check2){
         })
     });
 }else{
-    if(!check2) {
-        document.querySelector("#big_div_for_checkbox").style = "display:flex"
-        document.querySelector(".qora_for_check").style = "display:flex;"
-    }else {
-        document.querySelector("#big_div_for_checkbox").style = "display:none;"
-        document.querySelector(".qora_for_check").style = "display:none;"
-    }
+    
 
     if(!check1){
+        document.querySelector("#big_div_for_checkbox").style = "display:flex"
+        document.querySelector(".qora_for_check").style = "display:flex;"
     document.querySelector("#date221").style="color:red !important" 
-   
+        
     }else{
+        document.querySelector("#big_div_for_checkbox").style = "display:none;"
+        document.querySelector(".qora_for_check").style = "display:none;"
     document.querySelector("#date221").style="color:white !important" 
 
     }
