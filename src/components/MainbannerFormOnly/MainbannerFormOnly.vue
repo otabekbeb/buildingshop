@@ -64,23 +64,31 @@ if(name1.length>5 && nomer1.length>7 && check1.length>5 && check2){
     if(!check1){
         document.querySelector("#big_div_for_checkbox").style = "display:flex"
         document.querySelector(".qora_for_check").style = "display:flex;"
-    document.querySelector("#date221").style="color:red !important" 
-        
+        document.querySelector("#date221").style="color:red !important"      
     }else{
         document.querySelector("#big_div_for_checkbox").style = "display:none;"
         document.querySelector(".qora_for_check").style = "display:none;"
-    document.querySelector("#date221").style="color:white !important" 
+        document.querySelector("#date221").style="color:white !important" 
+    }
 
-    }
     if(name1.length<6){
- document.querySelector("#name").style="border:2px solid red !important"  
+        document.querySelector("#big_div_for_nameinputs").style = "display:flex"
+        document.querySelector(".qora_for_check2").style = "display:flex;"
+        document.querySelector("#name").style="border:2px solid red !important"  
     }else{
-       document.querySelector("#name").style="border:1px solid #d65f10 !important"   
+        document.querySelector("#name").style="border:1px solid #d65f10 !important"
+        document.querySelector("#big_div_for_nameinputs").style = "display:none;"
+        document.querySelector(".qora_for_check2").style = "display:none;"   
     }
+
     if(nomer1.length<7){
- document.querySelector("#phone").style="border:2px solid red !important" 
+        document.querySelector("#big_div_for_nameinputs").style = "display:flex";
+        document.querySelector(".qora_for_check2").style = "display:flex;";
+        document.querySelector("#phone").style="border:2px solid red !important"; 
     }else{
-        document.querySelector("#phone").style="border:1px solid #d65f10 !important"  
+        document.querySelector("#phone").style="border:1px solid #d65f10 !important";  
+        document.querySelector("#big_div_for_nameinputs").style = "display:none;";
+        document.querySelector(".qora_for_check2").style = "display:none";
     }
 }
 
@@ -93,8 +101,13 @@ if(name1.length>5 && nomer1.length>7 && check1.length>5 && check2){
         document.querySelector("#big_div_for_checkbox").style = "display:none;"
         document.querySelector(".qora_for_check").style = "display:none;"
     }
-</script>
 
+    function close_for_check2() {
+        document.querySelector("#big_div_for_nameinputs").style = "display:none;"
+        document.querySelector(".qora_for_check2").style = "display:none;"
+    }
+</script>
+    
 <style>
     .qora_for_check {
         display: none;
@@ -106,7 +119,19 @@ if(name1.length>5 && nomer1.length>7 && check1.length>5 && check2){
         background: rgba(55, 55, 55, 0.84);
         z-index: 1000;
     }
-    .big_div_for_checkbox_input {
+
+    .qora_for_check2 {
+        display: none;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(55, 55, 55, 0.84);
+        z-index: 1000;
+    }
+    .big_div_for_checkbox_input,
+    .big_div_for_name_inputs {
         display: none;
         position: fixed;
         top: 40%;
@@ -115,7 +140,8 @@ if(name1.length>5 && nomer1.length>7 && check1.length>5 && check2){
         bottom: 50%;
     }
 
-    .div_for_checkbox_input {
+    .div_for_checkbox_input,
+    .div_for_name_inputs {
         position: relative;
         display: flex;
         justify-content: center;
@@ -145,6 +171,13 @@ if(name1.length>5 && nomer1.length>7 && check1.length>5 && check2){
         font-weight: 700;
         color: #fff;
     }
+    
+    .div_for_name_inputs span {
+        font-size: 12px;
+        line-height: 15px;
+        font-weight: 700;
+        color: #fff;
+    }
 </style>
 
 <template>
@@ -164,6 +197,15 @@ if(name1.length>5 && nomer1.length>7 && check1.length>5 && check2){
                         <div class="div_for_checkbox_input">
                             <p id="close_for_check" @click="close_for_check">x</p>
                             <samp>Требуется подтвердить согласие на обработку персональных данных.</samp>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="qora_for_check2">
+                    <div id="big_div_for_nameinputs" class="big_div_for_name_inputs">
+                        <div class="div_for_name_inputs">
+                            <p id="close_for_check" @click="close_for_check2">x</p>
+                            <span>Lorem ipsum dolor sit, amet consectetur adipisicing.</span>
                         </div>
                     </div>
                 </div>

@@ -15,12 +15,29 @@ const categoryStore = useCategoriesStore();
 const { currentCategory, currentCategoryWithPath } = categoryStore;
 </script>
 
+<style>
+    #col-9-h1A {
+        font-size: 12px;
+        font-weight: 600;
+        color: #000;
+    }
+
+    #col-9-h1A span {
+        color: red;
+    }
+
+    #col-9-h1A span:hover {
+        text-decoration: underline;
+    }
+</style>
+
 <template>
     <LayoutDefault>
         <div class="text_page fav catalog">
             <div class="container row">
                 <AsideNav />
                 <div class="col-9 col-sm-12">
+                    <p class="col-9-pA"><a href="/" id="col-9-h1A">Главная страница</a> > <a href="/" id="col-9-h1A">КАТАЛОГ СТРОЙМАТЕРИАЛОВ</a> > <a href="/" id="col-9-h1A">СТРОЙМАТЕРИАЛЫ</a> > <a href="/" id="col-9-h1A"><span>ИЗОЛЯЦИОННЫЕ МАТЕРИАЛЫ</span></a></p>
                     <div class="text_page_top">
                         <h1>{{ currentCategory(route.params?.id)?.name }}</h1>
                         <Bradscubs :bradscubs="currentCategoryWithPath(route.params?.id)" />
