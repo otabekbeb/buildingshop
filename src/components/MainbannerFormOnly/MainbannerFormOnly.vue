@@ -21,32 +21,34 @@ const schema = yup.object().shape({
 });
 
 const onSubmit = async (values) => {
-    // console.log({
-    //     ...values,
-    //     items: favorites?.map(item => {
-    //         return {
-    //             id: item.id,
-    //             count: item.countCart
-    //         }
-    //     })
-    // });
     
-    var name1=document.querySelector('#name').value
-    var nomer1=document.querySelector('#phone').value
-    var check1=document.querySelector('.custom-checkbox').checked
-    var check2=document.querySelector('#big_div_for_checkbox').checked
-    console.log(check1)
-if(name1.length>5 && nomer1.length>7 && check1.length>5 && check2){
-    document.querySelector("#phone").style="border:1px solid #d65f10 !important" 
-    document.querySelector("#date221").style="color:white !important" 
-    document.querySelector("#name").style="border:1px solid #d65f10 !important" 
-    document.querySelector("#big_div_for_checkbox").style = "display:none;"
-    document.querySelector(".qora_for_check").style = "display:none;"
-    document.querySelector("#phone").value=""
-    document.querySelector("#name").value=""
-    document.querySelector('.custom-checkbox').checked=false
-    // document.querySelector('.qora_for_check').checked=false
-    // document.querySelector('#big_div_for_checkbox').checked=false
+    var i=0
+    var a=document.querySelector("body").clientWidth 
+    console.log(a)
+    if(a<=991 && window.location.pathname=="/" ){
+    i=1
+    }else{
+    i=0
+    }
+    
+    var name1=document.querySelectorAll('#name')[i].value
+    var nomer1=document.querySelectorAll('#phone')[i].value
+    var check1=document.querySelectorAll('.custom-checkbox')[i].checked
+    var check2=document.querySelectorAll('#big_div_for_checkbox')[i].checked
+
+if(name1.length>5 && nomer1.length>7 && check1){
+    document.querySelectorAll("#phone")[i].style="border:1px solid #d65f10 !important" 
+     document.querySelectorAll(".qora_for_check2")[i].style = "display:flex;";
+     
+    document.querySelectorAll("#date221")[i].style="color:white !important" 
+    document.querySelectorAll("#name")[i].style="border:1px solid #d65f10 !important" 
+    document.querySelectorAll("#big_div_for_checkbox")[i].style = "display:none;"
+    document.querySelectorAll(".qora_for_check")[i].style = "display:none;"
+    document.querySelectorAll("#phone")[i].value=""
+    document.querySelectorAll("#name")[i].value=""
+    document.querySelectorAll('.custom-checkbox')[i].checked=false
+    // document.querySelectorAll('.qora_for_check')[i].checked=false
+    // document.querySelectorAll('#big_div_for_checkbox')[i].checked=false
     await applicationAsyncCreate({
         ...values,
         name:name1,
@@ -59,36 +61,32 @@ if(name1.length>5 && nomer1.length>7 && check1.length>5 && check2){
         })
     });
 }else{
-    
-
     if(!check1){
-        document.querySelector("#big_div_for_checkbox").style = "display:flex"
-        document.querySelector(".qora_for_check").style = "display:flex;"
-        document.querySelector("#date221").style="color:red !important"      
+        document.querySelectorAll("#big_div_for_checkbox")[i].style = "display:flex"
+        document.querySelectorAll(".qora_for_check")[i].style = "display:flex;"
+        document.querySelectorAll("#date221")[i].style="color:red !important"      
     }else{
-        document.querySelector("#big_div_for_checkbox").style = "display:none;"
-        document.querySelector(".qora_for_check").style = "display:none;"
-        document.querySelector("#date221").style="color:white !important" 
+        document.querySelectorAll("#big_div_for_checkbox")[i].style = "display:none;"
+        document.querySelectorAll(".qora_for_check")[i].style = "display:none;"
+        document.querySelectorAll("#date221")[i].style="color:white !important" 
     }
 
     if(name1.length<6){
-        document.querySelector("#big_div_for_nameinputs").style = "display:flex"
-        document.querySelector(".qora_for_check2").style = "display:flex;"
-        document.querySelector("#name").style="border:2px solid red !important"  
+        document.querySelectorAll("#big_div_for_nameinputs")[i].style = "display:flex"
+        document.querySelectorAll("#name")[i].style="border:2px solid red !important"  
     }else{
-        document.querySelector("#name").style="border:1px solid #d65f10 !important"
-        document.querySelector("#big_div_for_nameinputs").style = "display:none;"
-        document.querySelector(".qora_for_check2").style = "display:none;"   
+        document.querySelectorAll("#name")[i].style="border:1px solid #d65f10 !important"
+        document.querySelectorAll("#big_div_for_nameinputs")[i].style = "display:none;"
+        
     }
 
     if(nomer1.length<7){
-        document.querySelector("#big_div_for_nameinputs").style = "display:flex";
-        document.querySelector(".qora_for_check2").style = "display:flex;";
-        document.querySelector("#phone").style="border:2px solid red !important"; 
+        document.querySelectorAll("#big_div_for_nameinputs")[i].style = "display:flex";
+        document.querySelectorAll("#phone")[i].style="border:2px solid red !important"; 
     }else{
-        document.querySelector("#phone").style="border:1px solid #d65f10 !important";  
-        document.querySelector("#big_div_for_nameinputs").style = "display:none;";
-        document.querySelector(".qora_for_check2").style = "display:none";
+        document.querySelectorAll("#phone")[i].style="border:1px solid #d65f10 !important";  
+        document.querySelectorAll("#big_div_for_nameinputs")[i].style = "display:none;";
+      
     }
 }
 
@@ -98,13 +96,29 @@ if(name1.length>5 && nomer1.length>7 && check1.length>5 && check2){
 };
 
     function close_for_check() {
-        document.querySelector("#big_div_for_checkbox").style = "display:none;"
-        document.querySelector(".qora_for_check").style = "display:none;"
+         var i=0
+    var a=document.querySelector("body").clientWidth 
+    console.log(a)
+    if(a<=991 && window.location.pathname=="/" ){
+    i=1
+    }else{
+    i=0
+    }
+        document.querySelectorAll("#big_div_for_checkbox")[i].style = "display:none;"
+        document.querySelectorAll(".qora_for_check")[i].style = "display:none;"
     }
 
     function close_for_check2() {
-        document.querySelector("#big_div_for_nameinputs").style = "display:none;"
-        document.querySelector(".qora_for_check2").style = "display:none;"
+         var i=0
+    var a=document.querySelector("body").clientWidth 
+    console.log(a)
+    if(a<=991 && window.location.pathname=="/" ){
+    i=1
+    }else{
+    i=0
+    }
+    document.querySelectorAll("#big_div_for_nameinputs")[i].style = "display:none;"
+    document.querySelectorAll(".qora_for_check2")[i].style = "display:none;"
     }
 </script>
     
@@ -187,12 +201,13 @@ if(name1.length>5 && nomer1.length>7 && check1.length>5 && check2){
         <Field type="tel" id="phone" autocomplete="off" name="phone" required placeholder="Номер телефона" />
         <button class="form_button" @click="onSubmit" type="submit">отправить
             заявку</button>
-        <div class="agreement" >
-            <input type="checkbox" class="custom-checkbox" name="happy" >
+        <div style="position:relative" class="agreement" >
+            <input type="checkbox" style="background:red" class="custom-checkbox" name="happy" >
             <label class="Sdd" for="happy"></label>
             <span id="date221">Нажимая на кнопку “отправить” вы даёте своё согласие на обработку персональных
                 данных</span>
-                <div class="qora_for_check">
+             
+        </div>   <div class="qora_for_check">
                     <div id="big_div_for_checkbox" class="big_div_for_checkbox_input">
                         <div class="div_for_checkbox_input">
                             <p id="close_for_check" @click="close_for_check">x</p>
@@ -202,13 +217,12 @@ if(name1.length>5 && nomer1.length>7 && check1.length>5 && check2){
                 </div>
 
                 <div class="qora_for_check2">
-                    <div id="big_div_for_nameinputs" class="big_div_for_name_inputs">
+                    <div id="big_div_for_nameinputs" class="big_div_for_name_inputs" style="display:block">
                         <div class="div_for_name_inputs">
                             <p id="close_for_check" @click="close_for_check2">x</p>
-                            <span>Lorem ipsum dolor sit, amet consectetur adipisicing.</span>
+                            <samp>Ваше сообщение было получено. они скоро свяжутся с вами</samp>
                         </div>
                     </div>
                 </div>
-        </div>
     </form>
 </template>
